@@ -15,9 +15,10 @@ class Server {
 
         //configuraciones de sockets
 
-        this.io =socketio( this.server,{
-            
-        })
+        this.io =socketio( this.server, {cors: {
+            origin: "*",
+            methods: ["GET", "POST"]
+          }});
     }
     middlewares () {
         //desplegar el directorio publico
